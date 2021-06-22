@@ -2409,6 +2409,12 @@ Cart Area
   border: 1px solid var(--black);
 }
 
+.remove-btn {
+  margin: 5px;
+  padding: 6px 9px;
+  font-size: 12px;
+}
+
 /*
 ======================
 Cart Area Media Query

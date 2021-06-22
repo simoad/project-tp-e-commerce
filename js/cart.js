@@ -31,28 +31,28 @@ T[3]={
 T[4]={
     "id": 4,
     "title": "Samsung Smart TV",
-    "image": "./images/products/sumsung/samsung6.jpeg",
+    "image": "./images/products/sumsung/tv.png",
     "price": 900,
     "category": "tvs"
 };
 T[5]={
     "id": 5,
     "title": "Apple Smart TV",
-    "image": "./images/products/sumsung/samsung4.jpeg",
+    "image": "./images/products/sumsung/tv2.png",
     "price": 1099,
     "category": "tvs"
 };
 T[6]={
     "id": 6,
     "title": "LG Smart TV",
-    "image": "./images/products/sumsung/samsung5.jpeg",
+    "image": "./images/products/sumsung/tv3.png",
     "price": 899,
     "category": "tvs"
 };
 T[7]={
     "id": 7,
     "title": "Samsung Smart TV",
-    "image": "./images/products/sumsung/samsung2.jpeg",
+    "image": "./images/products/sumsung/tv4.png",
     "price": 789,
     "category": "tvs"
 };
@@ -84,194 +84,73 @@ T[11]={
     "price": 239,
     "category": "casques"
 };
-/*
-// add item 
-function addListItem (obj) {
-    var html, newHtml, element;
-    // Create HTML string with placeholder text
-    
-        element = ".table";
-        
-        html = '<tr id="%id%"><td class="product__thumbnail"><a href="#"><img src="%image%" alt=""></a></td><td class="product__name"><a href="#">%title%</a><br><br></td><td class="product__price"><div class="price"><span class="new__price">$%price%</span></div></td><td class="product__quantity"><div class="input-counter"><div><span class="minus-btn"><i class="fas fa-minus"></i></span><input type="text" min="1" value="1" max="10" class="counter-btn"><span class="plus-btn"><i class="fas fa-plus"></i></span></div></div></td><td class="product__subtotal"><div class="price"><span class="new__price">$%newprice%</span></div><a href="#" class="remove__cart-item"><i class="fas fa-trash"></i></a></td></tr>';
-    
-    // Replace the placeholder text with some actual data
-    newHtml = html.replace('%id%', obj.id);
-    newHtml = newHtml.replace('%image%', obj.image);
-    newHtml = newHtml.replace('%price%', obj.price);
-    
-    // Insert the HTML into the DOM
-    document.querySelector(element).insertAdjacentHTML('beforeend', newHtml);
-};
 
-//delete item 
-function deleteListItem (selectorID) {
-    
-    var el = document.getElementById(selectorID);
-    el.parentNode.removeChild(el);
-};
-
-// get id 
-function getID(el) {
-    var id = el.parentNode.parentNode.id.value;
-    console.log(id);
-return id;
-};
-
-
-var ctrlAddItem = function(el) {
-    var input, newItem;
-    
-    // 1. Get the field input data
-    id = getID(el);        
-    
-    
-    for(var i= 0 ; i<T.length ; i++){
-
-    if(id == T[i].id){
-        // 3. Add the item to the UI
-        addListItem(T[i]);
-        
-        // 4. Clear the fields
-        UICtrl.clearFields();
-
-        // 5. Calculate and update budget
-        updateBudget();
-        
-        // 6. Calculate and update percentages
-        updatePercentages(); 
-    }
-    }
-};
-*/
-
-/* var ctrlDeleteItem = function(event) {
-    var itemID, splitID, type, ID;
-    
-    itemID = event.target.parentNode.parentNode.parentNode.parentNode.id;
-    
-    if (itemID) {
-        
-        //inc-1
-        splitID = itemID.split('-');
-        type = splitID[0];
-        ID = parseInt(splitID[1]);
-        
-        // 1. delete the item from the data structure
-        budgetCtrl.deleteItem(type, ID);
-        
-        // 2. Delete the item from the UI
-        UICtrl.deleteListItem(itemID);
-        
-        // 3. Update and show the new budget
-        updateBudget();
-        
-        // 4. Calculate and update percentages
-        updatePercentages();
-    }
-}; */
-
-
-/*
-// UI CONTROLLER
-var UIController = (function() {
-    return {
-        getID : function (el) {
-        var id = el.parentNode.id;
-        console.log(id);
-        return id;
-    },
-    // add item 
-    addListItem: function  (obj) {
-        var html, newHtml, element;
-        // Create HTML string with placeholder text
-        
-            element = ".table";
-            
-            html = '<tr id="%id%"><td class="product__thumbnail"><a href="#"><img src="%image%" alt=""></a></td><td class="product__name"><a href="#">%title%</a><br><br></td><td class="product__price"><div class="price"><span class="new__price">$%price%</span></div></td><td class="product__quantity"><div class="input-counter"><div><span class="minus-btn"><i class="fas fa-minus"></i></span><input type="text" min="1" value="1" max="10" class="counter-btn"><span class="plus-btn"><i class="fas fa-plus"></i></span></div></div></td><td class="product__subtotal"><div class="price"><span class="new__price">$%newprice%</span></div><a href="#" class="remove__cart-item"><i class="fas fa-trash"></i></a></td></tr>';
-        
-        // Replace the placeholder text with some actual data
-        newHtml = html.replace('%id%', obj.id);
-        newHtml = newHtml.replace('%image%', obj.image);
-        newHtml = newHtml.replace('%price%', obj.price);
-        
-        // Insert the HTML into the DOM
-        document.querySelector(element).insertAdjacentHTML('beforeend', newHtml);
-    },
-    
-    //delete item 
-    deleteListItem : function (selectorID) {
-        
-        var el = document.getElementById(selectorID);
-        el.parentNode.removeChild(el);
-    }
-}
-})();*/
-/*
-function reply_click(clicked_btn){
-    var id = clicked_btn.id;
-    console.log(id);
-    return id;
-};
-
-
-// GLOBAL APP CONTROLLER
-var controller = (function(UICtrl) {
-    
-    var setupEventListeners = function() {
-
-        document.querySelector(".product__btn").addEventListener('click', ctrlAddItem());
-    
-    };
-    
-    
-    
-    
-    var ctrlAddItem = function() {
-        
-        // 1. Get the field input data
-        
-
-        for(var i= 0 ; i<T.length; i++){
-    
-        //if(id == T[i].id){
-            // 3. Add the item to the UI
-            addListItem(T[i]);
-            
-       // }
-        }
-    };
-    
-    
-    
-    return {
-        init: function() {
-            console.log('Application has started.');
-            setupEventListeners();
-        }
-    };
-    
-})(UIController);
-
-controller.init(); */ 
-
-    var newPrice = document.querySelector('.new__price');
+var newPrice = document.querySelector('.new__price');
     var select = document.querySelector('.cart_products');
 	var button = document.querySelectorAll('.product__btn');
-    var plusBtn = document.querySelectorAll('.plus-btn');
-    var minusBtn = document.querySelectorAll('.minus-btn');
-    var counterBtn = document.querySelectorAll('.counter-btn');
-    var removeItem = document.querySelectorAll('.remove__cart-item');
     var product__subtotal = document.querySelector('.product__subtotal');
-    var counter = 1;
 
-    for(var count of counterBtn){
-        counter = count.value;
+if (document.readyState == 'loading') {
+    document.addEventListener('DOMContentLoaded', ready);
+} else {
+    ready();
+}
+
+
+    function ready() {
+        var removeCartItemButtons = document.getElementsByClassName('remove-btn');
+        for (var i = 0; i < removeCartItemButtons.length; i++) {
+            var button = removeCartItemButtons[i];
+            button.addEventListener('click', removeCartItem);
+        }
+    
+        var quantityInputs = document.getElementsByClassName('cart-quantity-input')
+        for (var i = 0; i < quantityInputs.length; i++) {
+            var input = quantityInputs[i];
+            input.addEventListener('change', quantityChanged);
+        }
+    
+        document.getElementsByClassName('btn-purchase')[0].addEventListener('click', purchaseClicked)
     }
 
-    for(var remove of removeItem){
-        remove.addEventListener('click', (e)=> {
-            e.target.parentElement.parentElement.remove();
-        });
+    function removeCartItem(event) {
+        var buttonClicked = event.target
+        buttonClicked.parentElement.parentElement.remove();
+        updateCartTotal();
+    }
+    
+    function quantityChanged(event) {
+        var input = event.target
+        if (isNaN(input.value) || input.value <= 0) {
+            input.value = 1
+        }
+        updateCartTotal()
+    }
+    
+    function purchaseClicked() {
+        alert('Thank you for your purchase');
+        var cartItems = document.getElementsByClassName('cart-items')[0];
+        while (cartItems.hasChildNodes()) {
+            cartItems.removeChild(cartItems.firstChild);
+        }
+        updateCartTotal();
+    }
+    
+    function updateCartTotal() {
+        var cartItemContainer = document.getElementsByClassName('cart-items')[0];
+        var cartRows = cartItemContainer.getElementsByClassName('cart-row');
+        var total = 0;
+        for (var i = 0; i < cartRows.length; i++) {
+            var cartRow = cartRows[i]
+            var priceElement = cartRow.getElementsByClassName('cart-price')[0]
+            var quantityElement = cartRow.getElementsByClassName('cart-quantity-input')[0]
+            var price = parseFloat(priceElement.innerText.replace('$', ''))
+            var quantity = quantityElement.value;
+
+            total = total + (price * quantity);
+        }
+        total = Math.round(total * 100) / 100
+        document.getElementsByClassName('cart-total-price')[0].innerText = '$' + total;
     }
 
 	for(var but of button){
@@ -280,48 +159,62 @@ controller.init(); */
 			// copy and paste //
             var id = e.target.id;
             console.log(e.target.id);
-            html = '<tr id="%id%"><td class="product__thumbnail"><a href="#"><img src="%image%" alt=""></a></td><td class="product__name"><a href="#">%title%</a><br><br></td><td class="product__price"><div class="price"><span class="new__price">$%price%</span></div></td><td class="product__quantity"><div class="input-counter"><div><span class="minus-btn"><i class="fas fa-minus"></i></span><input type="text" min="1" value="1" max="10" class="counter-btn"><span class="plus-btn"><i class="fas fa-plus"></i></span></div></div></td><td class="product__subtotal"><div class="price"><span class="new__price">$%newprice%</span></div><a href="#cart" class="remove__cart-item"><i class="fas fa-trash"></i></a></td></tr>';
-			var parent = e.target.parentNode;
-			//var clone = parent.cloneNode(true);
+            html = `<tr class="cart-row" id="%id%">
+            <td class="product__thumbnail">
+                <a href="#">
+                    <img src="%image%" alt="">
+                </a>
+            </td>
+            <td class="product__name">
+                <a href="#">%title%</a>
+                <br><br>
+            </td>
+            <td class="product__price">
+                <div class="price">
+                    <span class="price cart-price">$%price%</span>
+                </div>
+            </td>
+            <td class="product__quantity">
+                <div class="input-counter">
+                    <div>
+                        
+                        <input type="number" min="1" value="1" class="counter-btn cart-quantity-input">
+                        
+                    </div>
+                </div>
+            </td>
+            <td class="product__subtotal">
+                
+                    
+                
+                <button class="btn btn-danger remove-btn" type="button">REMOVE</button>
+            </td>
+        </tr>`
+            
             for(var i= 0 ; i<T.length; i++){
                 if(id == T[i].id){ 
+
                     var newHtml = html.replace('%id%', T[i].id);
                     newHtml = newHtml.replace('%image%', T[i].image);
                     newHtml = newHtml.replace('%title%', T[i].title);
                     newHtml = newHtml.replace('%price%', T[i].price); 
-                    newHtml = newHtml.replace('%newprice%', T[i].price*counter); 
-               }
+                    }
             }
+
 			select.insertAdjacentHTML('beforeend', newHtml);
+            updateCartTotal();
+
+            var cartItemContainer = document.getElementsByClassName('cart-items')[0];
+            var cartRows = cartItemContainer.getElementsByClassName('cart-row');
+            for (var i = 0; i < cartRows.length; i++) {
+                var cartRow = cartRows[i];
+                cartRow.getElementsByClassName('btn-danger')[0].addEventListener('click', removeCartItem);
+                cartRow.getElementsByClassName('cart-quantity-input')[0].addEventListener('change', quantityChanged);
+            }
+            
 		})
         
 	};
   
     
-        if(counterBtn){
-            for(var plus of plusBtn){
-            plus.addEventListener('click', function(){
-                counterBtn.value++;
-                console.log(counterBtn.value);
-            });
-        }
         
-        
-
-            for(var minus of minusBtn){
-                minus.addEventListener('click', function(){
-                    counterBtn.value--;
-                    console.log(counterBtn.value);
-                });
-        };
-        
-        
-
-        for(var i=0; i<plusBtn.length; i++){
-            plusBtn[i].addEventListener('click', function(){
-                counterBtn[i].value++;
-                console.log(counterBtn.value);
-            });
-        }
-
-    }
